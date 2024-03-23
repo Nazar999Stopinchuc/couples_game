@@ -1,0 +1,97 @@
+body {
+  background-color: rgb(15, 83, 185);
+}
+.container {
+  max-width: 1220px;
+  padding: 0 10px;
+  margin: 0 auto;
+}
+
+.cards-box {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin: 200px auto 20px;
+  padding: 10px;
+  max-width: 600px;
+  border-radius: 12px;
+  background-color: rgb(7, 229, 229);
+}
+
+.cards-box__card {
+  height: 100px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+}
+
+.cards-box__card.visible .card-front {
+  transform: rotateY(180deg);
+}
+
+.cards-box__card.visible .card-back {
+  transform: rotateY(360deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 3px;
+  box-shadow: 0.05em 0.05em 0.05em 0.05em rgba(0, 0, 0, 0.1);
+  font-size: 3.5em;
+  color: white;
+  transition: transform 0.5s;
+  backface-visibility: hidden;
+}
+
+.card-front {
+  background-color: rgb(110, 9, 205);
+}
+
+.card-back {
+  background-color: rgb(80, 9, 147);
+  transform: rotateY(180deg)
+}
+
+.vin-text {
+  text-align: center;
+  font-size: 24px;
+  color: #fff;
+  margin-bottom: 15px;
+}
+
+.start-btn {
+  padding: 5px 10px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 24px;
+  border-radius: 6px;
+  background-color: rgb(110, 9, 205);
+  color: #fff;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.3s, color 0.3s, opacity 0.3s;
+}
+
+.start-btn:hover {
+  background-color: #fff;
+  color: rgb(110, 9, 205);;
+}
+
+.start-btn:active {
+  opacity: 0.5;
+}
+
+@media (max-width: 760px) {
+  .cards-box {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+
